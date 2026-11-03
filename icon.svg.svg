@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- App Background with rounded PWA icon corners -->
+  <rect width="512" height="512" rx="112" fill="#0b0f19" />
+  
+  <!-- Outer Glow / Subtle Matrix Grid -->
+  <path d="M128 384 L128 160 L352 160 L352 384 Z" fill="none" stroke="#10b981" stroke-width="12" opacity="0.2" />
+  
+  <!-- The Looped Square (Symbolizing analytical flow & structured strategy) -->
+  <path d="M160 384 
+           L352 384 
+           C375 384, 384 375, 384 352 
+           L384 160 
+           C384 137, 375 128, 352 128 
+           L160 128 
+           C137 128, 128 137, 128 160 
+           L128 352 
+           C128 375, 137 384, 160 384 Z" fill="none" stroke="#10b981" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" />
+  
+  <!-- Central Data Nodes / Analytics Spark -->
+  <circle cx="256" cy="256" r="36" fill="#10b981" />
+  <path d="M220 256 L240 276 L292 224" fill="none" stroke="#0b0f19" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
