@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SlipLogic v1.1 BETA - High-Yield Matrix</title>
+    <style>
+        :root {
+            --bg-primary: #0b0f19;
+            --bg-card: #131b2e;
+            --accent-green: #10b981;
+            --text-white: #ffffff;
+            --text-muted: #94a3b8;
+            --border-color: #1e293b;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        body { background-color: var(--bg-primary); color: var(--text-white); padding: 16px; max-width: 480px; margin: 0 auto; }
+        header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .logo-area { display: flex; align-items: center; gap: 10px; }
+        .logo-icon { background: var(--accent-green); width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #000; }
+        .app-title h1 { font-size: 18px; font-weight: 700; }
+        .app-title p { font-size: 11px; color: var(--text-muted); }
+        .badge { background: rgba(16, 185, 129, 0.15); color: var(--accent-green); padding: 4px 8px; border-radius: 6px; font-size: 10px; font-weight: 600; }
+        
+        .commitment-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 14px; margin-bottom: 20px; }
+        .commitment-card h3 { font-size: 11px; color: var(--accent-green); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+        .commitment-card p { font-size: 12px; color: var(--text-muted); line-height: 1.4; }
+
+        .board-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+        .board-header h2 { font-size: 15px; font-weight: 600; }
+        .odds-pill { background: rgba(255,255,255,0.05); padding: 6px 10px; border-radius: 8px; font-size: 12px; font-weight: 600; color: var(--accent-green); border: 1px solid var(--border-color); }
+
+        .slip-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 14px; margin-bottom: 12px; }
+        .match-meta { display: flex; justify-content: space-between; font-size: 11px; color: var(--text-muted); margin-bottom: 6px; }
+        .fixture { font-size: 14px; font-weight: 600; margin-bottom: 10px; }
+        .selection-box { background: rgba(0,0,0,0.2); padding: 10px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; }
+        .sel-title { font-size: 11px; color: var(--text-muted); }
+        .sel-pick { font-size: 13px; font-weight: 600; color: var(--text-white); }
+        .sel-odds { font-size: 13px; font-weight: 700; color: var(--accent-green); }
+
+        .action-btn { width: 100%; background: var(--accent-green); color: #000; border: none; padding: 12px; border-radius: 10px; font-weight: 700; font-size: 14px; cursor: pointer; margin-top: 10px; transition: opacity 0.2s; }
+        .action-btn:active { opacity: 0.8; }
+        
+        nav { display: flex; justify-content: space-around; margin-top: 30px; border-top: 1px solid var(--border-color); padding-top: 12px; }
+        .nav-item { font-size: 11px; color: var(--text-muted); text-align: center; text-decoration: none; }
+        .nav-item.active { color: var(--accent-green); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-area">
+            <div class="logo-icon">📊</div>
+            <div class="app-title">
+                <h1>SlipLogic</h1>
+                <p>Calculated High-Yield PWA</p>
+            </div>
+        </div>
+        <div class="badge">v1.1 BETA</div>
+    </header>
+
+    <div class="commitment-card">
+        <h3>Responsible Punting Commitment</h3>
+        <p>5% of net revenues dedicated to responsible gaming. Disciplined KES 100 stakes, stretched value targets.</p>
+    </div>
+
+    <div class="board-header">
+        <h2>UCL High-Yield Matrix</h2>
+        <div class="odds-pill" id="totalOdds">Target Odds: ~4.75</div>
+    </div>
+
+    <!-- Leg 1 -->
+    <div class="slip-card">
+        <div class="match-meta">
+            <span>UEFA Champions League</span>
+            <span>Tonight</span>
+        </div>
+        <div class="fixture">Barcelona vs Aston Villa</div>
+        <div class="selection-box">
+            <div>
+                <div class="sel-title">Calculated Risk Pick</div>
+                <div class="sel-pick">Under 3.5 Goals</div>
+            </div>
+            <div class="sel-odds">1.58</div>
+        </div>
+    </div>
+
+    <!-- Leg 2 -->
+    <div class="slip-card">
+        <div class="match-meta">
+            <span>UEFA Champions League</span>
+            <span>Tonight</span>
+        </div>
+        <div class="fixture">Atletico Madrid vs Bayern Munich</div>
+        <div class="selection-box">
+            <div>
+                <div class="sel-title">Double Chance Anchor</div>
+                <div class="sel-pick">Atletico Win or Draw (1X)</div>
+            </div>
+            <div class="sel-odds">1.55</div>
+        </div>
+    </div>
+
+    <!-- Leg 3 -->
+    <div class="slip-card">
+        <div class="match-meta">
+            <span>UEFA Champions League</span>
+            <span>Tonight</span>
+        </div>
+        <div class="fixture">Manchester United vs AS Roma</div>
+        <div class="selection-box">
+            <div>
+                <div class="sel-title">Corner Volume Pick</div>
+                <div class="sel-pick">Over 9.5 Corners</div>
+            </div>
+            <div class="sel-odds">1.85</div>
+        </div>
+    </div>
+
+    <button class="action-btn" onclick="copySlipToClipboard()">Copy Betika-Ready Slip</button>
+
+    <nav>
+        <a href="#" class="nav-item active">🏠 Matrix</a>
+        <a href="#" class="nav-item">📜 Manifesto</a>
+        <a href="#" class="nav-item">💬 Beta Community</a>
+    </nav>
+
+    <script>
+        function copySlipToClipboard() {
+            const slipText = "SlipLogic High-Yield UCL Matrix:\n1. Barcelona vs Aston Villa - Under 3.5 Goals (1.58)\n2. Atletico Madrid vs Bayern Munich - 1X (1.55)\n3. Man United vs AS Roma - Over 9.5 Corners (1.85)\nTarget Odds: ~4.53 | Stake: KES 100";
+            navigator.clipboard.writeText(slipText).then(() => {
+                alert("High-yield slip copied to clipboard, Chief!");
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        }
+    </script>
+</body>
+</html>
